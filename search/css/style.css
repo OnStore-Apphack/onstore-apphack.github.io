@@ -1,0 +1,166 @@
+/* SCSS */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+}
+
+.google {
+  width: 100%;
+  height: auto;
+}
+
+.wrapimg {
+  background: #000;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+  display: none;
+}
+
+.wrapper {
+  width: 620px;
+  height: auto;
+  margin: auto;
+}
+
+.button-wrapper {
+  width: 209px;
+  height: 34px;
+  float: right;
+  margin-top: 10px;
+  display: none;
+}
+
+.google-data {
+  width: 620px;
+  padding: 10px;
+  position: relative;
+  font-family: 'Raleway', Arial, sans-serif;
+  color: white;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.3);
+}
+.google-data h1 {
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+.google-data input[type=text], .google-data input[type=password] {
+  width: 604px;
+  padding: 8px 4px 8px 10px;
+  border: 1px solid #999;
+  border: 1px solid rgba(78, 48, 67, 0.3);
+  background: rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #444;
+  font-size: 16px;
+}
+.google-data input::-webkit-input-placeholder {
+  color: rgba(37, 21, 26, 0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.google-data input:-moz-placeholder {
+  color: rgba(37, 21, 26, 0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.google-data input:-ms-input-placeholder {
+  color: rgba(37, 21, 26, 0.5);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.google-data input[type=text]:hover, .google-data input[type=password]:hover {
+  border-color: rgba(51, 51, 51, 0.4);
+}
+.google-data input[type=text]:focus, .google-data input[type=password]:focus, .google-data input[type=submit]:focus {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(255, 255, 255, 0.15);
+  outline: none;
+  background: #fff;
+}
+
+/* Placeholder style (from http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css) */
+.no-boxshadow .google-data input[type=text]:focus, .no-boxshadow .google-data input[type=password]:focus {
+  outline: 1px solid white;
+}
+
+.google-data input[type=submit] {
+  width: auto;
+  text-align: center;
+  padding: 8px 9px;
+  float: left;
+  background-color: #C53727;
+  margin: 0;
+  background-image: -webkit-linear-gradient(top, #dd4b39, #c53727);
+  background-image: -moz-linear-gradient(top, #dd4b39, #c53727);
+  background-image: -ms-linear-gradient(top, #dd4b39, #c53727);
+  background-image: -o-linear-gradient(top, #dd4b39, #c53727);
+  background-image: linear-gradient(to bottom, #dd4b39, #c53727);
+  border: 1px solid #B0281A;
+  border-radius: 2px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 2px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  font-family: 'Raleway', Arial, sans-serif;
+}
+.google-data input[type=submit]:nth-child(1) {
+  margin: 0 10px 0 0;
+}
+.google-data input[type=submit]:hover {
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 20px 30px rgba(99, 64, 86, 0.1);
+}
+
+.no-boxshadow .google-data input[type=submit]:hover {
+  background: #594642;
+}
+
+.google-data label {
+  display: none;
+  padding: 0 0 5px 2px;
+  cursor: pointer;
+}
+.google-data label:hover ~ input {
+  border-color: #333;
+}
+
+.no-placeholder .google-data label {
+  display: block;
+}
+
+.switch {
+  margin: 10px;
+  float: right;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.switch a:hover {
+  color: #000;
+}
+.switch a:link, .switch a:visited, .switch a:hover, .switch a:active {
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: 'Raleway', Arial, sans-serif;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}

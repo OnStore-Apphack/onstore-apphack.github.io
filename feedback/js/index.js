@@ -17,7 +17,7 @@ jQuery(function($)
                     'headers': {
                         'Reply-To': email
                     },
-                    'subject': 'Website Contact Form Submission',
+                    'subject': 'OnStore Feedback',
                     'text': msg,
                     'to': [
                     {
