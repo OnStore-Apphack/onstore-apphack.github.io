@@ -1,0 +1,146 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+
+html {
+  font-size: 87.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+  font-size: 1.3rem;
+  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+  background: #f0f0f0;
+}
+
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+.feedly {
+  width: 350px; 
+} 
+
+.feedly-list-item {
+  width: auto;
+  padding: 0;
+  perspective: 200px;  
+  margin-bottom: 15px;
+}
+
+.feedly-list-item:after,
+.feedly-list-item > a:after {
+  display: block;
+  content: " ";
+  visibililty: hidden;
+  height: 0;
+  clear: both;
+}
+
+.feedly span {
+  display: block;
+  float: left;
+  line-height: 1;
+  padding: 13px;
+}
+
+.feedly-list-item > a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  background: transparent;  
+}
+
+.feedly-list  .on .label {
+  width: 305px;
+}
+
+.feedly-list li:nth-child(1) span {
+  background: #6cc655;
+}
+
+.feedly-list li:nth-child(2) span {
+  background: #21aabd;
+}
+
+.feedly-list li:nth-child(3) span {
+  background: #654b6b;
+}
+
+.feedly-list li:nth-child(4) span {
+  background: #bd2a4e;
+}
+
+.feedly-list li:nth-child(5) span {
+  background: #ff9d00;
+}
+
+ .feedly .label {
+  border-left: 1px solid rgba(255,255,255,.25);
+  font-family: "Pathway Gothic One", helvetica, arial;
+  text-transform: uppercase;
+  height: 45px;
+  font-size: 1.5rem;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.icon { 
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  transition: all .4s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  
+}
+
+.off .icon {
+  transform: rotate(0deg);
+}
+
+.on .icon {
+  transform: rotate(90deg);
+}
+
+/* sub menus */
+li ul {
+  position: absolute;
+  width: 100%; 
+  opacity: 0;
+  transform-origin: 50% 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateX(-90deg);
+  transition: transform .5s ease;
+  
+}
+
+.on ~  ul {
+  visibility: visible;
+  position: static;   
+  float: left;
+  background: #fff;
+  clear: left;
+  opacity: 1;
+  transform: rotateX(0deg);
+ /* box-shadow: 0 1px 6px rgba(0,0,0,.1);*/
+}
+
+li li {
+  padding: 8px 20px 8px 45px;
+  border-bottom: 1px solid rgba(102,102,102,.1);
+}
+
+li li a {
+  text-decoration: none;
+  color: #555;
+  line-height: 1.2;
+  font-size: .85rem;
+}

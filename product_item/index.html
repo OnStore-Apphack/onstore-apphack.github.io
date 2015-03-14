@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>OnStore - Product Card</title>
+
+    <style>
+#urun {
+  position: relative;
+  display: block;
+  width: 150px; height: 150px;
+  margin: auto;
+  overflow: hidden;
+
+  border: 1px solid #444;
+  background: #333;
+  box-shadow: 0 5px 8px -3px #000;
+
+  font-family: Arial;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 1px #000;
+
+  box-sizing: border-box;
+}
+#urun div {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  background: rgba(0,0,0,.5);
+  transition: all .25s ease-in-out;
+}
+
+#urun:hover div {
+  opacity: 1;
+}
+</style>
+
+    <script src="js/prefixfree.min.js"></script>
+
+    <script src="js/modernizr.js"></script>
+
+</head>
+
+<body>
+
+  <div id="urun">
+  <img src="http://lorempixel.com/150/150">
+  <div>
+    <h3>Ürün Adı</h3>
+    <p>Bilgileri, falan filan, onlar bunlar</p>
+  </div>
+</div>
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+
+</body>
+
+</html>

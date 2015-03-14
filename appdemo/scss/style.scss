@@ -1,0 +1,802 @@
+$main: #666;
+$mComp: #fff;
+$brandDkOrange: #DE8033;
+$brandDLtOrange: #FAC456;
+$brandBlue: #5AACAB;
+$brandRed: #D55C41;
+$brandGreen: #949942;
+
+
+@mixin hCenter() {
+	margin: auto;
+	left: 0;
+	right: 0;
+}
+@mixin vCenter() {
+	margin: auto;
+	top: 0;
+	bottom: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+div {
+	position: relative;
+}
+body {
+    background: #fff;   
+    color: #666;
+    text-align: center;
+    font-family: futura, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+p {
+  margin-top: 40px;
+}
+a {
+  color: $brandDkOrange;
+  text-decoration: none;
+  @include transition(color .2s ease);
+  &:hover {
+    color: $brandBlue;
+  }
+}
+p#warning {
+  color: #ccc;
+  text-transform: none;
+}
+header, footer {
+	max-width: 800px;
+	margin: 0px auto 40px;
+}
+#stageWrap {
+	@include background-image(linear-gradient($brandDkOrange 0%, $brandDkOrange 70%, transparent 70%)); 
+	background-size: contain;
+	width: 600px;
+	margin: auto;
+	padding: 1px 0px 0px;
+	position: relative;
+}
+#stage {
+	width: 100%;
+	height: 400px;
+	position: relative;
+	cursor: pointer;
+	z-index: 100;
+	div {
+		position: absolute;
+	}
+}
+$pWidth : 160px;
+$pHeight : $pWidth * 2.06;
+$pDepth : 16px;
+$sWidth: $pWidth - 24;
+#phoneWrap {
+	width: $pWidth;
+	height: $pHeight;
+	@include perspective(1000px);
+	@include hCenter();
+	@include vCenter();
+	opacity: 0;
+}
+#phoneReverse {
+	@include hCenter();
+	@include vCenter();
+	width: $pWidth;
+	height: $pHeight;
+	@include transform-style(preserve-3d);
+	@include transform(rotateY(0deg) rotateX(0deg) translateZ(0px) scale(1,1) );
+	@include transform-origin(50% 100%);
+}
+#phone {
+	width: 100%;
+	height: 100%;
+	//@include linear-gradient(to bottom, #e5e5e5, #d3d3d3);
+	@include transform-origin(50% 50%);
+	z-index: 100;
+
+	@include transform-style(preserve-3d);
+
+	//@include transform( rotateY(60deg) );
+	#pTop, #pBottom {
+		height: $pDepth;
+		width: $pWidth;
+		background-color: lighten($main, 20%);
+		@include transform(rotateX(90deg) translateY(-8px) scale(1));
+	}
+	#pTop {
+		top: -($pDepth/2);
+		//display: none;
+		background-color: lighten($main, 40%);
+	}
+	#pBottom {
+		bottom: -($pDepth/2);
+	}
+	#pLeft, #pRight {
+		height: $pHeight;
+		width: $pDepth;
+		background-color: lighten($main, 30%);
+		left: $pDepth/-2;
+		@include transform(
+			rotateY(90deg) 
+			translateX($pDepth/2) 
+			scale(1)
+		);
+	}
+	#pRight {
+		left: auto;
+		right: $pDepth/-2;
+	}
+}
+#pBody:after, #laptopLid:after {
+	content:"";
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/highlight.svg) left center no-repeat;
+	background-size: auto 100%;
+	position: absolute;
+	height: 100%;
+	width: 200%; 
+	left: 0;
+	@include transform( translateZ(2px) translateX(0%) );
+}
+#pBody {
+	width: 100%;
+	height: 100%;
+	background-color: lighten($main, 50%);
+	overflow: hidden;
+	@include backface-visibility(hidden);
+	&:after {
+		content:"";
+		background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/highlight2.svg) right center no-repeat;
+		background-size: auto 100%;
+		position: absolute;
+		height: 100%;
+		width: 100%; 
+		left: 0;
+		@include transform( translateZ(2px) translateX(100%) );
+	}
+	
+	#screen {
+		width: $sWidth;
+		height: $sWidth*1.777;
+		@include hCenter();
+		@include vCenter();
+		@include transform-origin(100% 50%);
+		@include transform(translateZ(1px));
+		box-shadow: 0px 1px 0px white;
+		border: 1px solid lighten($main, 50%);
+		border-top: 1px solid lighten($main, 30%); 
+		border-bottom: none;
+		//z-index: 100;
+	}
+}
+#speaker {
+	top: 20px;
+	@include hCenter();
+	width: $pWidth * .25;
+	height: 5px;
+	border-radius: 3px;
+	background-color: $mComp;
+	box-shadow: 0px 1px 1px rgba(0,0,0,.2) inset;
+	@include transform(translateZ(0px));
+	border-top: 1px solid lighten($main, 30%);
+	z-index: 30;
+}
+
+#homeBtn {
+	width: $pWidth * .15;
+	height: $pWidth * .15;
+	@include hCenter();
+	bottom: 10px;
+	background-color:$mComp;
+	border-radius: 50%;
+	box-shadow: 0px 9px 0px lighten($main, 57%) inset;
+	border-top: 1px solid lighten($main, 30%);
+	@include transform(translateZ(0px));
+}
+
+#screen .phoneUiWrap {
+	width: $sWidth;
+	height: $sWidth*1.777;
+	background-color: white;
+	opacity: 0;
+	@include hCenter();
+	@include vCenter();
+	@include transform-origin(100% 50%);
+	overflow: hidden;
+	& > div {
+		position: relative;
+		width: 100%;
+		background-size: cover;
+		@include transform(
+			translate3d(0,200%,0)
+		);
+		opacity: 0;
+	}
+}
+#phoneHome {
+  width: $sWidth;
+	height: $sWidth*1.777;
+	background-color: white;
+	@include hCenter();
+	@include vCenter();
+  //opacity: .5;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/home.png) center center no-repeat;
+		background-size: cover;
+  @include transform(translateZ(0px));
+}
+#phoneUiWrap {
+	@include transform(translateZ(0px));
+	#phoneUiMenu {
+		height: 10%;
+		background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/menu.png) center center no-repeat;
+		background-size: cover;
+		z-index: 100;
+	}
+	#phoneUiDetails1 {
+		height: 20%;
+		background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/details.png) center center no-repeat;
+		background-size: cover;
+		z-index: 90;
+	}
+	#phoneUiPlayer {
+		height: 50%;
+		background-color: #3D3E39;
+		z-index: 80;
+
+		#playing {
+			width: 100%;
+			height: 100%;
+			background-color: #F7C155;
+			position: absolute;
+			@include transform( translate3d(0,0,0) scaleX(0) );
+			@include transform-origin(0 0);
+			opacity: 1;
+		}
+		#playBtns {
+			height: 100%;
+			width: 100%;
+			background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/player.png) center center no-repeat;
+			background-size: 100%;
+			position: absolute;
+			@include transform( translate3d(0,0,0) );
+			opacity: 1;
+		}
+	}
+	#phoneUiDetails2 {
+		height: 20%;
+		background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/details.png) center center no-repeat;
+		background-size: cover;
+		z-index: 70;
+	}
+}
+#phoneUiWrap2 {
+	opacity: 1;
+	@include transform(translateZ(0px));
+	#phoneUiMenu2 {
+		z-index: 40;
+		height: 20px;
+		background-color: $brandBlue;
+		font-family: sans-serif;
+		color: white;
+		font-size: 10px;
+		line-height: 20px;
+	}
+	#checkIn {
+		z-index: 30;
+		height: 38%;
+		background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/checkIn.png) center center no-repeat;
+		background-size: 100%;
+	}
+	#phonePhoto {
+		z-index: 20;
+		height: 30%;
+		background-color: $brandRed;
+
+		#photoBtn {
+			height: 100%;
+			width: 40%;
+			position: relative;
+			@include display(flex);
+			@include align-items(flex-end);
+
+			svg {
+				width: 30px;
+				margin: auto;
+			}
+		}
+		#snapShot {
+			width: 60%;
+			height: 100%;
+			top: 0;
+			right: 0;
+			box-shadow: 0 0 0 3px #D55C41 inset;
+			background-color: white;
+			opacity: 0;
+			img {
+				max-height: 80%;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				opacity: 0;
+			}
+		}
+	}
+	#signOff {
+		z-index: 10;
+		height: 25%;
+		background-color: white;
+		background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/42053/sign.png) center center no-repeat;
+		background-size: 140px;
+	}
+}
+
+// Banners
+#bannerWrap {
+	width: 100%;
+	top: 40px;
+}
+#banner3 {
+	top: 40px;
+}
+$bannerWidth: 300px;
+.banner {
+	@include hCenter();
+	max-width: $bannerWidth;
+	h3 {
+		padding: 6px 0 5px;
+		@include hCenter();
+		z-index: 30;
+		position: relative;
+		color: $brandDkOrange;
+		font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 100;
+	}
+}
+#banner1 h3, #banner2 h3, #banner3 h3 {
+	opacity: 0;
+}
+.flag-center {
+	background-color: white;
+	width: $bannerWidth*.8;
+	@include hCenter();
+	z-index: 20;
+	height: 100%;
+	top: 0;
+	@include transform-origin (50% 50%);
+	@include transform( scale(0) );
+}
+$foldWidth: ( ($bannerWidth*.2)/2 ) * .3;
+.flag-left, .flag-right {
+	width: ($bannerWidth*.2)/2;
+	height: 100%;
+	top: 8px;
+	z-index: 10;
+	&:before, &:after {
+		content: "";
+		background-color: green;
+		height: 100%;
+		position: absolute;
+	}
+	&:before {
+		width: $foldWidth;
+		background-color: lighten($main, 30%);
+	}
+	&:after {
+		width: 70%;
+		background-color: yellow;
+		background-color: lighten($main, 50%);
+	}
+}
+.flag-left {
+	left: $foldWidth;
+	&:before {
+		right: 0;
+		@include transform-origin (0% 50%);
+		@include transform( scale(0) );
+	}
+	&:after {
+		left: 0;
+		@include transform-origin (100% 50%);
+		@include transform( scale(0) );
+	}
+}
+.flag-right {
+	right: $foldWidth;
+	&:before {
+		left: 0;
+		@include transform-origin (100% 50%);
+		@include transform( scale(0) );
+	}
+	&:after {
+		right: 0;
+		@include transform-origin (0% 50%);
+		@include transform( scale(0) );
+	}
+}
+
+#shadowWrap {
+	@include hCenter();
+	width: $pWidth - 10;
+	height: 8px;
+}
+#pShadow {
+	width: 100%;
+	height: 100%;
+	background-color: lighten($main, 55%);
+	top: $pHeight + 18;
+	@include hCenter();
+	border-radius: 3px;
+	z-index: 10;
+}
+
+#laptopWrap {
+	@include hCenter();
+	width: $pHeight;
+	height: $pHeight * .7;
+	@include perspective(1500px);
+	@include backface-visibility(hidden);
+	z-index: 500;
+	
+	#laptopLid {
+		width: 100%;
+		height: 100%;
+		background-color: darken($main, 10%);
+		@include transform(rotateX(-87deg) scale(.8));
+		@include transform-origin(50% 100%);
+		@include backface-visibility(hidden);
+		bottom: -115px;
+		opacity: 0;
+		@include transform-style(preserve-3d);
+		overflow: hidden;
+	}
+	#laptopScreen {
+		width: 91%;
+		height: 87%;
+		background-color: $mComp;
+		@include hCenter();
+		@include vCenter();
+		@include transform(translateZ(1px));
+	}
+	#laptopUiMenu {
+		width: 100%;
+		height: 10%;
+		background-color: $brandBlue;
+		@include transform ( scaleY(0) );
+		@include transform-origin( 0 0 );
+		font-family: sans-serif;
+		color: white;
+		font-size: 10px;
+		line-height: 20px;
+	}
+	#laptopDetails {
+		width: 100%;
+		height: 50%;
+		background-color: white;
+
+		#iconWrap {
+			text-align: center;
+			width: 50%;
+			height: 100%;
+			top: 50%;
+			margin-top: -10px;
+		}
+		.icons {
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			@include transform(scale(0));
+		}
+		#laptopWords {
+			width: 50%;
+			height: 100%;
+			right: 0;
+			top: 45px;
+
+			div {
+				width: 80%;
+				height: 4px;
+				margin: 3px 0;
+				background-color: #E6E6E6;
+				position: relative;
+				@include transform-origin(0 0);
+				@include transform(scaleX(0));
+			}
+		}
+	}
+	#laptopChart {
+		width: 100%;
+		height: 50%;
+		bottom: 0;
+		@include display(flex);
+		@include align-items(flex-end);
+		padding: 0 10%;
+		@include box-sizing(border-box);
+		background-color: $brandDkOrange;
+
+		div {
+			width: 30%;
+			height: 80%;
+			margin: 0 auto;
+			position: relative;
+			background-color: $brandDLtOrange;
+			@include transform-origin( 0 100% );
+		}
+		#bar1 { height: 20%; @include transform(scaleY(0)); }
+		#bar2 { height: 50%; @include transform(scaleY(0)); }
+		#bar3 { height: 80%; @include transform(scaleY(0)); }
+	}
+}
+
+
+// animations functions
+$easeOutBack:        cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easeOutBackCustom:  cubic-bezier(.32,1.32,.25,1);
+
+$easeOutBackCustom:  cubic-bezier(.25,1.25,.1,1);
+$slowEaseInEaseOut:  cubic-bezier(0.915, 0.000, 0.445, 1.000);
+
+$easeOutQuart:       cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeOutExpo: 		 cubic-bezier(0.19, 1, 0.22, 1);
+
+
+// Intro
+.go #phoneWrap   { @include animation( phoneSlideIn 1.3s $easeOutBack forwards ); }
+.go #phone       { @include animation( phoneRotateIn 1.3s $easeOutBack forwards ); }
+.go #pBody:after { @include animation( highlightSlideInBack 1.3s $easeOutBack forwards ); }
+.go #pShadow     { @include animation( phoneRotateIn 1.3s $easeOutBackCustom forwards ); }
+
+// Phone Ui1
+$phoneUiQue1: 1.1s;
+$slideDuration: 1.2s;
+.go #phoneUiWrap                { @include animation ( fadeIn .3s ease-out $phoneUiQue1 forwards ); }
+
+.go #banner1 h3                 { @include animation ( fadeIn .2s ease-out  $phoneUiQue1+.4 forwards ); }
+.go #banner1 .flag-center       { @include animation ( scaleX .3s ease-out  $phoneUiQue1+.4 forwards ); }
+.go #banner1 .flag-left:before, 
+.go #banner1 .flag-right:before { @include animation ( scaleX .1s ease-out  $phoneUiQue1+.7 forwards ); }
+.go #banner1 .flag-left:after,
+.go #banner1 .flag-right:after  { @include animation ( scaleX .2s ease-out  $phoneUiQue1+.8 forwards ); }
+
+.go #phoneUiMenu                { @include animation ( phoneUiSlideUp $slideDuration $easeOutBackCustom $phoneUiQue1+.9 forwards ); }
+.go #phoneUiDetails1            { @include animation ( phoneUiSlideUp $slideDuration $easeOutBackCustom $phoneUiQue1+1.1 forwards ); }
+.go #phoneUiPlayer              { @include animation ( phoneUiSlideUp $slideDuration $easeOutBackCustom $phoneUiQue1+1.3 forwards ); }
+.go #phoneUiDetails2            { @include animation ( phoneUiSlideUp $slideDuration $easeOutBackCustom $phoneUiQue1+1.5 forwards ); }
+.go #playing                    { @include animation ( scaleX 2.3s linear $phoneUiQue1+1.5 forwards ); }
+
+
+
+
+// Phone Ui2
+$phoneUiQue2: 5.1s;
+.go #banner1                    { @include animation ( fadeOut .15s ease-out $phoneUiQue2 forwards ); }
+.go #phoneUiWrap2               { @include animation ( fadeIn .3s ease-out $phoneUiQue2 forwards ); }
+
+.go #banner2 h3                 { @include animation ( fadeIn .2s ease-out $phoneUiQue2+.4 forwards ); }
+.go #banner2 .flag-center       { @include animation ( scaleX .3s ease-out $phoneUiQue2+.4 forwards ); }
+.go #banner2 .flag-left:before, 
+.go #banner2 .flag-right:before { @include animation ( scaleX .1s ease-out $phoneUiQue2+.7 forwards ); }
+.go #banner2 .flag-left:after,
+.go #banner2 .flag-right:after  { @include animation ( scaleX .2s ease-out $phoneUiQue2+.8 forwards ); }
+
+.go #phoneUiMenu2               { @include animation ( phoneUiSlideUp $slideDuration $easeOutBackCustom $phoneUiQue2+.9 forwards ); }
+.go #checkIn                    { @include animation ( phoneUiSlideUp $slideDuration $easeOutBackCustom $phoneUiQue2+1.1 forwards ); }
+.go #phonePhoto                 { @include animation ( phoneUiSlideUp $slideDuration $easeOutBackCustom $phoneUiQue2+1.2 forwards ); }
+.go #signOff                    { @include animation ( phoneUiSlideUp $slideDuration $easeOutBackCustom $phoneUiQue2+1.5 forwards ); }
+.go #photoBtn                   { @include animation ( fadeOutIn .2s ease $phoneUiQue2+2.8 forwards ); }
+.go #snapShot                   { @include animation ( fadeIn .5s ease $phoneUiQue2+2.9 forwards ); }
+.go #snapShot img               { @include animation ( fadeIn 2s ease $phoneUiQue2+3.1 forwards ); }
+
+
+
+// Morph to Laptop
+$morphQue: 9.6s;
+.go #banner2                    { @include animation ( fadeOut .15s ease-out $morphQue forwards ); }
+.go #homeBtn, 
+.go #speaker, 
+.go #screen                     { @include animation ( fadeOut .4s ease-out $morphQue forwards ); }
+
+.go #phoneReverse               { @include animation( phoneMorph .9s $easeOutBackCustom $morphQue+.4 forwards ); }
+.go #shadowWrap                 { @include animation ( shadowSlideUp .9s $easeOutBackCustom $morphQue+.4 forwards ); }
+
+.go #banner3 h3                 { @include animation ( fadeIn .2s ease-out $morphQue+1.3 forwards ); }
+.go #banner3 .flag-center       { @include animation ( scaleX .3s ease-out $morphQue+1.3 forwards ); }
+.go #banner3 .flag-left:before, 
+.go #banner3 .flag-right:before { @include animation ( scaleX .1s ease-out $morphQue+1.6 forwards ); }
+.go #banner3 .flag-left:after,
+.go #banner3 .flag-right:after  { @include animation ( scaleX .2s ease-out $morphQue+1.7 forwards ); }
+
+
+.go #laptopLid                  { @include animation ( openLid .8s $easeOutBack $morphQue+1 forwards ); }
+.go #laptopLid:after            { @include animation ( highlightSlideIn 1.8s $easeOutExpo $morphQue+1.1 forwards ); }
+
+
+// Laptop UI
+.go #laptopUiMenu                  { @include animation ( scaleY .4s $easeOutBack $morphQue+1 forwards ); }
+.go #iconWrap .icons:first-child   { @include animation ( scale .4s $easeOutBack $morphQue+1.5 forwards ); }
+.go #iconWrap .icons:last-child    { @include animation ( scale .4s $easeOutBack $morphQue+1.6 forwards ); }
+
+.go #laptopWords div:nth-child(1)  { @include animation ( scaleX 2.5s $easeOutExpo $morphQue+1.8 forwards ); }
+.go #laptopWords div:nth-child(2)  { @include animation ( scaleX 2.5s $easeOutExpo $morphQue+1.9 forwards ); }
+.go #laptopWords div:nth-child(3)  { @include animation ( scaleX 2.5s $easeOutExpo $morphQue+2.0 forwards ); }
+.go #laptopWords div:nth-child(4)  { @include animation ( scaleX 2.5s $easeOutExpo $morphQue+2.1 forwards ); }
+
+.go #bar1                          { @include animation ( scaleY .8s $easeOutBack $morphQue+1.9s forwards ); }
+.go #bar2                          { @include animation ( scaleY .8s $easeOutBack $morphQue+2.0s forwards ); }
+.go #bar3                          { @include animation ( scaleY .8s $easeOutBack $morphQue+2.1s forwards ); }
+
+
+$aniOffset: 200%;
+@include keyframes(phoneSlideIn) {
+	0% {
+		@include transform( translate3d(-$aniOffset,0,0) );
+		opacity: 0;
+	}
+	70% {
+		@include transform( translate3d(10px,0,0) );
+		opacity: 1;
+	}
+	100% {
+		@include transform( translate3d(0px,0,0) );
+		opacity: 1;
+	}
+}
+@include keyframes(phoneRotateIn) {
+	0%,5%  {
+		@include transform( rotateY(70deg) );
+	}
+	70% {
+		@include transform( rotateY(-8deg) );
+	}
+	100% {
+		@include transform( rotateY(0deg) );
+	}
+}
+@include keyframes(highlightSlideInBack) {
+	0% {
+		@include transform( translate3d(-50%,0,2px) );
+	}
+	70% {
+		@include transform( translate3d(-20%,0,2px) );
+	}
+	100% {
+		@include transform( translate3d(-30%,0,2px) );
+	}
+}
+@include keyframes(highlightSlideIn) {
+	0% {
+		@include transform( translate3d(-50%,0,2px) );
+	}
+	100% {
+		@include transform( translate3d(-30%,0,2px) );
+	}
+}
+@include keyframes(uiSlideIn) {
+	0% {
+		@include transform( translate3d(-$aniOffset/2,0,0) );
+		opacity: 0;
+	}
+	25% {
+		@include transform( translate3d(0,0,0) scaleX(.1) );
+		opacity: 1;
+	}
+	100% {
+		@include transform( translate3d(0,0,0) );
+		opacity: 1;
+	}
+}
+@include keyframes(phoneUiSlideUp) {
+	0% {
+		@include transform( translate3d(0,250px,0) );
+		opacity: 0;
+	}
+	100% {
+		@include transform( translate3d(0,0,0) );
+		opacity: 1;
+	}
+}
+
+@include keyframes(phoneSlideOut) {
+	0% {
+		@include transform( translate3d(0,0,0) );
+		opacity: 1;
+	}
+	40% {
+		@include transform( translate3d(15px,0,0) );
+		opacity: 1;
+	}
+	100% {
+		@include transform( translate3d(-$aniOffset,0,0) );
+		opacity: 0;
+	}
+}
+@include keyframes(fadeIn) {
+	to {
+		opacity: 1;
+	}
+}
+@include keyframes(fadeOut) {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@include keyframes(fadeOutIn) {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@include keyframes(shadowSlideUp) {
+	0% {
+		@include transform( scaleX(1) );
+		@include animation-timing-function($easeOutQuart);
+	}
+	40% {
+		@include transform( scaleX(.95) );
+		@include animation-timing-function($easeOutBackCustom);
+	}
+	100% {
+		@include transform( scaleX(2) );
+	}
+}
+@include keyframes(phoneMorph) {
+	0% {
+		@include transform ( scale(1,1) );
+		@include animation-timing-function($easeOutQuart);
+	}
+
+	40% {
+		@include transform ( scale(.95,1.05) );
+		@include animation-timing-function($easeOutBackCustom);
+	}
+	
+	100% {
+		@include transform ( scale(2,.05) );
+		
+	}
+}
+@include keyframes(scaleX) {
+	0% {
+		@include transform(
+			translate3d(0,0,0) scaleX(0)
+		);
+	}
+	100% {
+		@include transform(
+			translate3d(0,0,0) scaleX(1)
+		);
+	}
+}
+@include keyframes(scaleY) {
+	to {
+		@include transform( scaleY(1) );
+	}
+}
+@include keyframes(scale) {
+	to {
+		@include transform( scale(1) );
+	}
+}
+@include keyframes(openLid) {
+	0% {
+		@include transform( rotateX(-87deg) scale(.8) );
+		opacity: 0;
+	}
+	100% {
+		@include transform( rotateX(0deg) scale(.8) );
+		opacity:1;
+	}
+}
