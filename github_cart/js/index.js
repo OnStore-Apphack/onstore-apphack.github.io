@@ -2,13 +2,13 @@ $(document).ready(function() {
 
   // Product data to be used in shop and in cart
   var products = {
-    'Octocat Mug' : ['Octocat Mug', "The mug you've been dreaming about. One sip from this ceramic 16oz fluid delivery system and you'll never go back to red cups.", 14, 'http://cdn.shopify.com/s/files/1/0051/4802/products/white-mug-1_1024x1024.jpg', 1],
-    'Leather Coasters' : ['Leather Coasters', "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.", 18, 'http://cdn.shopify.com/s/files/1/0051/4802/products/MG_1934_1024x1024.jpg', 2],  
-    'Octopint (Set of 2)' : ['Octopint (Set of 2)', "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.", 16, 'http://cdn.shopify.com/s/files/1/0051/4802/products/pint_1024x1024.jpg', 3],
-    'Blacktocat 2.0 Tee' : ['Blacktocat 2.0 Tee', "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.", 25, 'http://cdn.shopify.com/s/files/1/0051/4802/products/blacktocat-3_1024x1024.jpg', 4],
-    'Die Cut Stickers' : ['Die Cut Stickers', "Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!", 2, 'http://cdn.shopify.com/s/files/1/0051/4802/products/sticker-large_1024x1024.jpg', 5],
-    'Pixelcat Shirt' : ['Pixelcat Shirt', "Pixels are your friends. Show your bits in this super-comfy blue American Apparel tri-blend shirt with a pixelated version of your favorite aquatic feline", 25, 'http://cdn.shopify.com/s/files/1/0051/4802/products/8bit-1_1024x1024.jpg?145', 6]
-  };  
+    'Lays' : ['Lays Chips', "The mug you've been dreaming about. One sip from this ceramic 16oz fluid delivery system and you'll never go back to red cups.", 14, 'http://assets.kitchendaily.com/styles/large/s3/field/image/lays-potato-chips.jpg', 1],
+    'Mazza Juice' : ['Mazza Juice', "Wholesome Funfilled Real Fruit Experience", 25, 'http://upload.wikimedia.org/wikipedia/commons/d/dd/Maaza_bottles.jpg', 2],
+	'Center Fresh' : ['Center Fresh', "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.", 16, 'http://www.centerfresh.in/images/slider/1.png', 3],
+    'Santoor' : ['Santoor', "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.", 10, 'http://www.discountbodycare.com/images/detailed/1/Santoor-Glycerine-Soap.jpg', 4],  
+    'Garnier Face Wash' : ['Garnier Face Wash', "Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!", 16, 'http://www.projectsjugaad.com/wp-content/uploads/2013/03/Garnier-Men-Oil-Clear-and-Powerlight-Big-Offer-Jugaad.jpg', 5],
+    'Rin Detergent Soap' : ['Rin Detergent Soap', "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.", 25, 'http://www.unilever.com.lk/Images/Rin273x210_tcm75-322478.jpg', 6]
+ };  
   
   // Populates shop with items based on template and data in var products
   
@@ -25,7 +25,7 @@ $(document).ready(function() {
     
     $template.find('h1').text(itemName);
     $template.find('p').text(itemDescription);
-    $template.find('.price').text('$' + itemPrice);
+    $template.find('.price').text('Rs: ' + itemPrice);
     $template.css('background-image', 'url(' + itemImg + ')');
     
     $template.data('id', itemId);
@@ -74,7 +74,7 @@ $(document).ready(function() {
     } else {
       $template.find('.cart-product').css('background-image', 'url(' + $item.data('image') + ')');
       $template.find('h3').text($item.data('name'));
-      $template.find('.subtotal').text('$' + $item.data('price'));
+      $template.find('.subtotal').text('Rs: ' + $item.data('price'));
     
       $template.data('id', $item.data('id'));
       $template.data('price', $item.data('price'));
@@ -93,7 +93,7 @@ $(document).ready(function() {
     var quantity = $item.find('.quantity').val(),
         price = $item.data('price'),
         subtotal = quantity * price;
-    $item.find('.subtotal').text('$' + subtotal);
+    $item.find('.subtotal').text('Rs: ' + subtotal);
     $item.data('subtotal', subtotal);
   } 
     
