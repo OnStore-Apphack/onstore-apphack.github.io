@@ -10,7 +10,7 @@ jQuery(function($)
             type: "POST",
             url: "https://mandrillapp.com/api/1.0/messages/send.json",
             data: {
-                'key': 'IfANR__mFGeLeIgPr-MUhw',
+                'key': '42D-KmqrdCvb-xpq9B38VQ',
                 'message': {
                     'from_email': email,
                     'from_name': name,
@@ -21,8 +21,8 @@ jQuery(function($)
                     'text': msg,
                     'to': [
                     {
-                        'email': 'varanasisai@gmail.com',
-                        'name': 'OnStore Feedback',
+                        'email': 'aryabhataapphack@gmail.com',
+                        'name': 'OnStore-Feedback',
                         'type': 'to'
                     }]
                 }
