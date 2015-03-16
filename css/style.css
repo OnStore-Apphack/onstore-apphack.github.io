@@ -54,7 +54,7 @@ body a:hover{
 form.ap-but input[type="submit"]{
 	width:229px;
 	height:61px;
-	background:url(../images/ap-but.png)no-repeat;
+	background:url(../images/ap-but.PNG)no-repeat;
 	display:inline-block;
 	cursor:pointer;
 	border:0;
