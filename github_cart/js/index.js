@@ -2,12 +2,12 @@ $(document).ready(function() {
 
   // Product data to be used in shop and in cart
   var products = {
-    'Lays' : ['Lays Chips', "The mug you've been dreaming about. One sip from this ceramic 16oz fluid delivery system and you'll never go back to red cups.", 14, 'http://assets.kitchendaily.com/styles/large/s3/field/image/lays-potato-chips.jpg', 1],
-    'Mazza Juice' : ['Mazza Juice', "Wholesome Funfilled Real Fruit Experience", 25, 'http://upload.wikimedia.org/wikipedia/commons/d/dd/Maaza_bottles.jpg', 2],
-	'Center Fresh' : ['Center Fresh', "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.", 16, 'http://www.centerfresh.in/images/slider/1.png', 3],
-    'Santoor' : ['Santoor', "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.", 10, 'http://www.discountbodycare.com/images/detailed/1/Santoor-Glycerine-Soap.jpg', 4],  
-    'Garnier Face Wash' : ['Garnier Face Wash', "Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!", 16, 'http://www.projectsjugaad.com/wp-content/uploads/2013/03/Garnier-Men-Oil-Clear-and-Powerlight-Big-Offer-Jugaad.jpg', 5],
-    'Rin Detergent Soap' : ['Rin Detergent Soap', "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.", 25, 'http://www.unilever.com.lk/Images/Rin273x210_tcm75-322478.jpg', 6]
+    'Lays' : ['Lays Chips', "Be A Little Dillogical – The Main snack of every programme. You just cannot stop with having one.", 10, 'http://assets.kitchendaily.com/styles/large/s3/field/image/lays-potato-chips.jpg', 1],
+    'Mazza Juice' : ['Mazza Juice', "Wholesome Funfilled Real Fruit Experience", 30, 'http://upload.wikimedia.org/wikipedia/commons/d/dd/Maaza_bottles.jpg', 2],
+    'Center Fresh' : ['Center Fresh', "A whole new chewing gum that makes u say “ Zubaan Pe Rakhe Lagaam”.", 5, 'http://www.centerfresh.in/images/slider/1.png', 3],
+    'Santoor' : ['Santoor', "Ageless Beauty with Santoor Soaps.", 25, 'http://www.discountbodycare.com/images/detailed/1/Santoor-Glycerine-Soap.jpg', 4],  
+    'Garnier Face Wash' : ['Garnier Face Wash', "A face wash like never before. It cleanses your face and keeps it dirt proof.", 83, 'http://www.projectsjugaad.com/wp-content/uploads/2013/03/Garnier-Men-Oil-Clear-and-Powerlight-Big-Offer-Jugaad.jpg', 5],
+    'Rin Detergent Soap' : ['Rin Detergent Soap', "Now keep your clothes sparkling white with the all new Rin Bar.", 10, 'http://www.unilever.com.lk/Images/Rin273x210_tcm75-322478.jpg', 6]
  };  
   
   // Populates shop with items based on template and data in var products
