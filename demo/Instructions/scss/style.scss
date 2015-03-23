@@ -1,0 +1,166 @@
+// Inspiration: https://dribbble.com/shots/1937452-Guided-Tour 
+
+$grad-color-1: #348AC7;
+$grad-color-2: #7474BF;
+
+html {
+    height: 100%;
+}
+
+body {
+   background: -webkit-linear-gradient($grad-color-1, $grad-color-2); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient($grad-color-1, $grad-color-2); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient($grad-color-1, $grad-color-2); /* For Firefox 3.6 to 15 */
+   background: linear-gradient($grad-color-1, $grad-color-2);
+}
+
+@mixin unselectable() {
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+.card {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -60%);
+   -webkit-transform: translate(-50%, -60%);
+   @include unselectable();
+
+}
+$style-color: #3498db;
+
+.box {
+   background-color: white;
+   width: 400px;
+   height: 235px;
+   border-radius: 5px;
+
+   h1 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 21pt;
+      padding-left: 25px;
+      padding-top: 20px;
+   }
+
+   p {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      padding-left: 25px;
+      padding-right: 40px;
+      color: black;
+   }
+}
+
+.tri {
+   width: 0;
+   height: 0;
+   border-left: 25px solid transparent;
+   border-right: 25px solid transparent;
+   border-bottom: 25px solid white;
+   margin-left: 45px;
+   margin-bottom: -20px;
+}
+
+#back {
+   width: 60px;
+   height: 40px;
+   display: inline-block;
+   cursor: pointer;
+   @include unselectable();
+   p {
+      text-align: center;
+      color: $style-color;
+      font-family: sans-serif;
+   }
+}
+
+#next {
+   display: inline-block;
+   float: right;
+   background: $style-color;
+   height: 40px;
+   width: 75px;
+   cursor: pointer;
+   border-radius: 0 0 5px;
+
+   p {
+      margin-left: -3px;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+   }
+}
+
+#progress {
+   display: inline-block;
+   width: 168px;
+   margin-left: 45px;
+}
+
+.bubble {
+   width: 10px;
+   height: 10px;
+   background-color: #DAECF9;
+   display: inline-block;
+   border-radius: 12.5px;
+   position: absolute;
+}
+
+.connector {
+   display: inline-block;
+   width: 50px;
+   height: 2px;
+   background-color: #DAECF9;
+   vertical-align: middle;
+   margin-right: -0.25em;
+   margin-top: -6px;
+   margin-left: 6px;
+}
+
+.bubble-fill {
+   background-color: #3498db;
+}
+
+.tap {
+   margin-left: 1.5px;
+}
+
+.bottom-element {
+   height: 40px;
+   width: 400px;
+   position: absolute;
+   bottom: 0;
+}
+
+.social {
+  text-align: center;
+}
+
+.twitter {
+  color: #3177A5;
+  font-family: sans-serif;
+  text-decoration: none;
+  
+  &:hover {
+    color: #ecf0f1;
+  }
+}
+
+.github {
+  color: #3177A5;
+  font-family: sans-serif;
+  text-decoration: none;
+  
+  &:hover {
+    color: #ecf0f1;
+  }
+}
+
+p {
+  color: #2C6A9A;
+}
