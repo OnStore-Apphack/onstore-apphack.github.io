@@ -25,9 +25,9 @@ img {
   height: 100%;
   background: #fff;
   border: 2px solid #ebeff0;
-  -webkit-box-shadow: 7px 7px 1px -2px #f1f4f9;
-  -moz-box-shadow: 7px 7px 1px -2px #f1f4f9;
-  box-shadow: 7px 7px 1px -2px #f1f4f9;
+  -webkit-box-shadow: 7px 7px 7px -2px #f1f4f9;
+  -moz-box-shadow: 7px 7px 7px -2px #f1f4f9;
+  box-shadow: 7px 7px 7px -2px #f1f4f9;
 }
 .widget:after {
   content: "";
@@ -59,7 +59,7 @@ img {
 .widget .slideshow-nav div {
   display: table;
   width: 50%;
-  height: 100px;
+  height: 75px;
   float: left;
   vertical-align: middle;
   border-bottom: 2px 2px #ebeff0;
@@ -70,7 +70,7 @@ img {
     width: 100%;
     height: 50%;
     border-right: 2px 2px #ebeff0;
-    border-bottom: none;
+    border-bottom: 2px 2px #ebeff0;
   }
 }
 .widget .slideshow-nav div #prev, .widget .slideshow-nav div #next {
@@ -129,7 +129,7 @@ img {
 }
 .widget .cycle-slideshow figure figcaption {
   width: 100%;
-  padding: 2em;
+  padding: 1.5em;
 }
 @media only screen and (min-width: 620px) {
   .widget .cycle-slideshow figure figcaption {
@@ -162,9 +162,9 @@ img {
   display: block;
   position: absolute;
   content: "";
-  top: -1px;
+  top: 10px;
   width: 4px;
-  height: 4px;
+  height: 3px;
   background: #ebeff0;
   border-radius: 50%;
 }
@@ -177,7 +177,7 @@ img {
 .widget .cycle-slideshow figure figcaption .price {
   display: block;
   font-family: 'Gentium Basic', serif;
-  font-size: 3em;
+  font-size: 2.5em;
   color: #cb103f;
 }
 .widget .cycle-slideshow figure div {
