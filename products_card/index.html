@@ -2,80 +2,111 @@
 <html>
 
 <head>
+
   <meta charset="UTF-8">
-	<title> OnStore - Product Card</title>
+
+  <title>OnStore - Products Suggestions</title>
+
+  <meta name="viewport" content="initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Oranienbaum|Gentium+Basic'>
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-<div id="make-3D-space">
-    <div id="product-card">
-        <div id="product-front">
-        	<div class="shadow"></div>
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png" alt="" />
-            <div class="image_overlay"></div>
-            <div id="view_details">View details</div>
-            <div class="stats">        	
-                <div class="stats-container">
-                    <span class="product_price">$39</span>
-                    <span class="product_name">Adidas Originals</span>    
-                    <p>Men's running shirt</p>                                            
 
-                    <div class="product-options">
-                    <strong>SIZES</strong>
-                    <span>XS, S, M, L, XL, XXL</span>
-                    <strong>COLORS</strong>
-                    <div class="colors">
-                        <div class="c-blue"><span></span></div>
-                        <div class="c-red"><span></span></div>
-                        <div class="c-white"><span></span></div>
-                        <div class="c-green"><span></span></div>
-                    </div>
-                </div>                       
-                </div>                         
-            </div>
-        </div>
-        <div id="product-back">
-	        <div class="shadow"></div>
-            <div id="carousel">
-                <ul>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large.png" alt="" /></li>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large2.png" alt="" /></li>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large3.png" alt="" /></li>
-                </ul>
-                <div class="arrows-perspective">
-                    <div class="carouselPrev">
-                        <div class="y"></div>
-	                    <div class="x"></div>
-                    </div>
-                    <div class="carouselNext">
-                        <div class="y"></div>
-	                    <div class="x"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="flip-back">
-            	<div id="cy"></div>
-                <div id="cx"></div>
-            </div>
-        </div>	  
-    </div>	
-</div>	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/index.js"></script>
+  <div class="widget">
+
+  <div class="slideshow-nav">
+
+    <div>
+      <span id="prev" class="fa fa-chevron-up"></span>
+    </div>
+
+    <div>
+      <span id="next" class="fa fa-chevron-down"></span>
+    </div>
+
+  </div>
+
+  <div class="cycle-slideshow" data-cycle-fx="scrollVert" data-cycle-slides="figure" data-cycle-timeout="0" data-cycle-prev="#prev" data-cycle-next="#next">
+
+    <figure>
+
+      <figcaption>
+        <h3>Gemstone</h3>
+        <span class="break"></span>
+        <h4>Bracelet</h4>
+        <span class="price">$600</span>
+      </figcaption>
+
+      <div>
+        <!-- Image by Aleksey Gnilenkov from Russia [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/gnilenkov/7906670774 -->
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/bracelet.jpg" alt="Gemstone Bracelet">
+      </div>
+
+    </figure>
+
+    <figure>
+
+      <figcaption>
+        <h3>Gold</h3>
+        <span class="break"></span>
+        <h4>Ring</h4>
+        <span class="price">$1200</span>
+      </figcaption>
+
+      <div>
+        <!-- Image by Aleksey Gnilenkov from Russia [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/gnilenkov/8132090918 -->
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/ring.jpg" alt="Gold Ring">
+      </div>
+
+    </figure>
+
+    <figure>
+
+      <figcaption>
+        <h3>Silver</h3>
+        <span class="break"></span>
+        <h4>Brooch</h4>
+        <span class="price">$799</span>
+      </figcaption>
+
+      <div>
+        <!-- Image by Aleksey Gnilenkov from Russia [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/gnilenkov/5787299051 -->
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/brooch.jpg" alt="Silver Brooch">
+      </div>
+
+    </figure>
+
+    <figure>
+
+      <figcaption>
+        <h3>Diamond</h3>
+        <span class="break"></span>
+        <h4>Earrings</h4>
+        <span class="price">$399</span>
+      </figcaption>
+
+      <div>
+        <!-- Image by Aleksey Gnilenkov from Russia [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Flickr, https://www.flickr.com/photos/gnilenkov/8434791931 -->
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/earrings.jpg" alt="Diamond Earrings">
+      </div>
+
+    </figure>
+
+  </div>
+
+</div>
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/203277/cycle2.js'></script>
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
