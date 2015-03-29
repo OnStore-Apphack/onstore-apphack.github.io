@@ -23,9 +23,9 @@ body {
     transform-style: preserve-3d;
     transition: transform 5s;
     position:absolute;    
-    top:80px;
+    top:20px;
     left:50%;	
-    margin-left:-167px;
+    margin-left:-170px;
 }
 #product-front, #product-back{
 	width:335px;
