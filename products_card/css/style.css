@@ -20,7 +20,8 @@ img {
 
 .widget {
   margin: 4em auto 0;
-  width: 240px;
+  width: 330px;
+  margin-top:5px;
   height: 100%;
   background: #fff;
   border: 2px solid #ebeff0;
@@ -61,14 +62,14 @@ img {
   height: 100px;
   float: left;
   vertical-align: middle;
-  border-bottom: 2px solid #ebeff0;
+  border-bottom: 2px 2px #ebeff0;
   cursor: pointer;
 }
 @media only screen and (min-width: 620px) {
   .widget .slideshow-nav div {
     width: 100%;
     height: 50%;
-    border-right: 2px solid #ebeff0;
+    border-right: 2px 2px #ebeff0;
     border-bottom: none;
   }
 }
@@ -88,6 +89,7 @@ img {
   color: #ceae61;
 }
 .widget .slideshow-nav div #prev {
+  border-top: 1px;
   border-right: 1px solid #ebeff0;
 }
 @media only screen and (min-width: 620px) {
@@ -117,6 +119,8 @@ img {
 .widget .cycle-slideshow figure {
   margin: 0;
   width: 100%;
+  bottom:-1px;
+  margin-bottom:1px;
 }
 .widget .cycle-slideshow figure:after {
   content: "";
